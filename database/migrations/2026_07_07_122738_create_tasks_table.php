@@ -17,9 +17,11 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->dateTime('due_date')->nullable();
             $table->boolean('is_completed')->default(false);
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

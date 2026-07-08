@@ -15,6 +15,7 @@ class Task extends Model
         'category_id',
         'created_at',
         'updated_at',
+        'user_id',
     ];
 
     public function subTasks()
